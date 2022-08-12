@@ -18,37 +18,33 @@ hbs.registerPartials( path.resolve() + '/views/partials');
 app.use( express.static( 'public' ))
 
 
-app.get('/hola-mundo', (req, res) => {
-    res.send('Hola mundo desde su respectiva ruta');
-})
+// app.get('/', (req, res) => {
+//     res.render('home', {
+//         nombre: 'Carlos Rodriguez',
+//         titulo: 'Curso de Node'
 
-app.get('/', (req, res) => {
-    res.render('home', {
-        nombre: 'Carlos Rodriguez',
-        titulo: 'Curso de Node'
+//     });
+// });
 
-    });
-});
+// app.get('/generic', (req, res) => {
+//     // res.sendFile(path.resolve() + '/public/generic.html');
+//     res.render('generic', {
+//         nombre: 'Carlos Rodriguez',
+//         titulo: 'Curso de Node'
+//     });
+// });
 
-app.get('/generic', (req, res) => {
-    // res.sendFile(path.resolve() + '/public/generic.html');
-    res.render('generic', {
-        nombre: 'Carlos Rodriguez',
-        titulo: 'Curso de Node'
-    });
-});
+// app.get('/elements', (req, res) => {
+//     // res.sendFile(path.resolve() + '/public/elements.html');
+//     res.render('elements', {
+//         nombre: 'Carlos Rodriguez',
+//         titulo: 'Curso de Node'
+//     });
 
-app.get('/elements', (req, res) => {
-    // res.sendFile(path.resolve() + '/public/elements.html');
-    res.render('elements', {
-        nombre: 'Carlos Rodriguez',
-        titulo: 'Curso de Node'
-    });
-
-});
+// });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.resolve() + '/public/old/404.html');
+    res.sendFile(path.resolve() + '/public/index.html');
 });
 
 app.listen( port, () => {
